@@ -1,0 +1,26 @@
+
+'''Бонус: заготовки для счётчиков времени и очков
+start_time = time.time()
+old_time = time.time()
+
+
+time_text = Label(0,0,50,50,back)
+time_text.set_text('Время:',40, DARK_BLUE)
+time_text.draw(20, 20)
+
+
+score_text = Label(380,0,50,50,back)
+score_text.set_text('Счёт:',45, DARK_BLUE)
+score_text.draw(20,20)
+
+
+timer = Label(50,55,50,40,back)
+timer.set_text('0', 40, DARK_BLUE)
+timer.draw(0,0)
+
+
+score = Label(430,55,50,40,back)
+score.set_text('0', 40, DARK_BLUE)
+score.draw(0,0)'''
+
+
