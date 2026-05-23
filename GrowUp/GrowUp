@@ -1,0 +1,49 @@
+assistant = Assistant('Иван', 'лаборант')
+corn = Vegetable('Кукуруза', 0, 0, 0)
+tomato = Vegetable('Помидор', 0, 0, 0)
+potato = Vegetable('Картофель', 0, 0, 0)
+ 
+#начало симуляции
+print("Симуляция рабочего дня началась.")
+time = 8 #время начала рабочего дня
+end_time = 19 #время окончания рабочего дня
+ 
+#цикл, который запрашивает у лаборанта действие каждый час
+while time < end_time:
+    print("Время:", str(time)+':00') # выводим информацию о текущем времени
+    sample = input("Вы зашли в кабинет с опытными образцами. Выберите образец:\n 1 - кукуруза\n 2 - помидор\n 3 - картофель") # спрашиваем у лаборанта, над каким опытным образцом будет совершаться действие
+   
+    if sample =='1':
+        plant = corn
+    elif sample == '2':
+        plant = tomato
+    else:
+        plant = potato
+   
+    action = input("Выберите действие:\n 1 - полить\n 2 - внести удобрение\n 3 - включить дополнительное освещение") # уточняем какое действие будет совершаться над образцом
+    if action =='1':
+        assistant.water(plant)
+    if action =='2':
+        assistant.fertilize(plant)
+    if action =='3':
+        assistant.turn_light(plant)
+         
+       
+    time = time + 1 # увеличиваем время на час
+    sleep(1) #ставим паузу на несколько секунд
+
+
+
+
+#выводим информацию об опытных образцах и их текущем статусе
+corn.print_info()
+result_corn = corn.checkstatus(2,1,1)    
+tomato.print_info()
+result_tomato = tomato.checkstatus(1,1,1)
+potato.print_info()
+result_potato = potato.checkstatus(0,0,1)
+ 
+#выводим результаты симуляции. Допущен или нет лаборант до настоящих опытных образцов.
+assistant.checkresult(result_corn, result_tomato, result_potato)
+
+
