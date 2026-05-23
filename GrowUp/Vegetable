@@ -1,0 +1,21 @@
+class Vegetable():
+    def __init__(self, kind, water_saturation, fertilizer_saturation, light_saturation):
+        self.kind = kind #вид
+        self.water_saturation = water_saturation #насыщенность водой
+        self.fertilizer_saturation = fertilizer_saturation #насыщенность удобрением
+        self.light_saturation = light_saturation #насыщенность ультрафиолетом
+ 
+    def print_info(self):
+        print('Вид образца:', self.kind)
+        print('Обеспеченность водой:', self.water_saturation)
+        print('Обеспеченность питательными веществами:', self.fertilizer_saturation)
+        print('Обеспеченность светом:', self.light_saturation)
+
+
+    def checkstatus(self,n_water_saturation,n_fertilizer_saturation,n_light_saturation):
+        if self.water_saturation >= n_water_saturation and self.fertilizer_saturation == n_fertilizer_saturation and self.light_saturation >= n_light_saturation:
+            print("Результат: образец выжил\n")
+            return True
+        else:
+            print("Результат: образец погиб\n")
+            return False
